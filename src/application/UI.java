@@ -1,4 +1,6 @@
-package aplication;
+package application;
+
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -42,7 +44,7 @@ public class UI {
 			return new ChessPosition(column, row);
 		}
 		catch(RuntimeException e) {
-			throw new InputMismatchException("Erro ao ler a posição da peça, vlore validos de a1 até h8");
+			throw new InputMismatchException("Erro ao ler a posição da peça, valores validos de a1 até h8");
 		}
 	}
 	

@@ -33,6 +33,12 @@ public class ChessMatch {
 		return (ChessPiece) capturedPiece;
 	}
 	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition){
+		Position p = sourcePosition.toPosition();
+		validationSourcePosition(p);
+		return board.piece(p).possibleMoves();
+	}
+	
 	private void validationSourcePosition(Position position) {
 		if(!board.thereIsAPiece(position)) {
 			throw new ChessException("There is a piece here /há uma peça aqui");

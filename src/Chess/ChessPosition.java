@@ -9,7 +9,7 @@ public class ChessPosition {
 	public ChessPosition(char column, int row) {
 		
 		if(column<'a' || column >'h' || row<1 || row >8) {
-			throw new ChessException("Posição econlhida deve estar entre a1 e h8");
+			throw new ChessException("Posicao econlhida deve estar entre a1 e h8");
 		}
 		this.column = column;
 		this.row = row;	
@@ -28,7 +28,7 @@ public class ChessPosition {
 	}
 	
 	protected static ChessPosition fromPosition(Position posi) {
-		return new ChessPosition((char)('a'-posi.getColumn()),8-posi.getRow());
+		return new ChessPosition((char)('a'+posi.getColumn()),8-posi.getRow());
 	}
 	@Override
 	public String toString() {

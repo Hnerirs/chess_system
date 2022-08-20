@@ -1,26 +1,33 @@
 package Chess.pieces;
 
-import boargame.Board;
-import boargame.Position;
+
 import Chess.ChessPiece;
 import Chess.Color;
+import boargame.Board;
+import boargame.Position;
 
-public class Knight extends ChessPiece{
+public class Knight extends ChessPiece {
+
 
 	public Knight(Board board, Color color) {
 		super(board, color);
+		
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public String toString() {
 		return "C";
 	}
+
 	public boolean canMove(Position posi) {
 		ChessPiece p = (ChessPiece) getBoard().piece(posi);
 		return p == null || p.getColor() != getColor();
 	}
+
 	
+	
+
 	@Override
 	public boolean[][] possibleMoves() {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
@@ -66,7 +73,7 @@ public class Knight extends ChessPiece{
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-
+		
 		return mat;
 	}
 

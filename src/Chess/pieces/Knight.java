@@ -14,7 +14,7 @@ public class Knight extends ChessPiece{
 	
 	@Override
 	public String toString() {
-		return "K";
+		return "C";
 	}
 	public boolean canMove(Position posi) {
 		ChessPiece p = (ChessPiece) getBoard().piece(posi);

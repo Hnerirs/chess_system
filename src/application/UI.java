@@ -120,7 +120,7 @@ public class UI {
 		System.out.println(Arrays.toString(white.toArray()));
 		System.out.println(ANSI_RESET);
 		System.out.println(ANSI_YELLOW);
-		System.out.println("YELLOW=>");
+		System.out.println("BLACK=>");
 		System.out.println(Arrays.toString(black.toArray()));
 		System.out.println(ANSI_RESET);
 

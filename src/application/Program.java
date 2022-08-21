@@ -19,7 +19,7 @@ public class Program {
 		List<ChessPiece> captured = new ArrayList<>();
 		while (!c.getCheckMate()) {
 			try {
-				//UI.clearScreen();
+				UI.clearScreen();
 				UI.printMach(c, captured);
 				System.out.println();
 				
@@ -29,7 +29,7 @@ public class Program {
 				
 				
 				boolean[][] possibleMoves = c.possibleMoves(source);
-				//UI.clearScreen();
+				UI.clearScreen();
 				UI.printBoard(c.getPieces(),possibleMoves);
 	
 				System.out.println();
@@ -48,7 +48,11 @@ public class Program {
 					
 				
 					System.out.println("Enter piece for promotion (R/C/B/Q):");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					while(!type.equals("B") && !type.equals("C") && !type.equals("Q") && !type.equals("R")){
+						System.out.println("Invalid value !Enter piece for promotion (R/C/B/Q):");
+						type = sc.nextLine().toUpperCase();
+					}
 					c.replacePromotedPiece(type); 
 				}
 			}
@@ -61,7 +65,7 @@ public class Program {
 				sc.nextLine();
 			}
 		}
-		//UI.clearScreen();
+		UI.clearScreen();
 		UI.printMach(c, captured);
 
 	}
